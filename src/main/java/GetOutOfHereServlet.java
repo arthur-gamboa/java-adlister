@@ -7,7 +7,7 @@ import javax.servlet.http.*;
 public class GetOutOfHereServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletResponse req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
         resp.sendRedirect("http://www.google.com");
     }
