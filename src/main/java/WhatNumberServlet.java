@@ -12,7 +12,12 @@ public class WhatNumberServlet extends HttpServlet {
 
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("<h1>User Number was: " + userNum + "</h1>");
+
+        if (userNum != null) {
+            out.println("<h1>User Number was: " + userNum + "</h1>");
+        } else {
+            out.println("<h1>You're no fun, you know?</h1>");
+        }
     }
 
 }
