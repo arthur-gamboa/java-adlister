@@ -8,37 +8,33 @@
 <body>
 <h1>Customize Your Pizza!</h1><hr>
 
-<form method="POST" action="pizza-order">
-    <h3>Select Your Crust</h3>
-    <label>
-        <select name="crust">
+<form method="POST" action="/pizza-order">
+    <label for="crust">Crust</label>
+        <select name="crust" id="crust">
             <option value="hand">Hand Tossed</option>
             <option value="thin">Thin Crust</option>
             <option value="stuff">Stuffed Crust</option>
-        </select>
-    </label><br><br>
-    <h3>Select Your Size</h3>
-    <label>
-        <select name="size">
+        </select><br><br>
+
+    <label for="size">Size</label>
+        <select name="size" id="size">
             <option value="sm">Small</option>
             <option value="md">Medium</option>
             <option value="lg">Large</option>
-        </select>
-    </label><br><br>
-    <label>
-        <h3>Select Your Toppings</h3>
-            <input type="checkbox" name="toppings" id="pep" value="pep">Pepperoni<br>
-            <input type="checkbox" name="toppings" id="pin" value="pin">Pineapple<br>
-            <input type="checkbox" name="toppings" id="ham" value="ham">Ham<br>
-            <input type="checkbox" name="toppings" id="veg" value="veg">Veggies
-    </label><br><br>
-    <label for="address">
-        <h3>Delivery Address</h3>
-    </label>
+        </select><br><br>
+
+    <label for="toppings">Select Your Toppings</label><br>
+            <input type="checkbox" name="toppings" id="toppings" value="pepperoni">Pepperoni<br>
+            <input type="checkbox" name="toppings" id="toppings2" value="pineapple">Pineapple<br>
+            <input type="checkbox" name="toppings" id="toppings3" value="ham">Ham<br>
+            <input type="checkbox" name="toppings" id="toppings4" value="veggies">Veggies
+    <br><br>
+
+    <label for="address">Delivery Address</label><br>
             <input id="address" type="text" name="address" placeholder="Enter delivery address">
     <br><br><br>
 
-    <button type="submit">Submit Order</button>
+    <button type="submit">Submit Order</button><br><br>
     <div>
         Address Entered: ${address}
     </div>

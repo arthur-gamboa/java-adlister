@@ -12,6 +12,11 @@ public class PizzaOrderForm extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String crustType = request.getParameter("crust");
+        System.out.println("Crust Type: " + crustType);
+        String pizzaSize = request.getParameter("size");
+        System.out.println("Pizza Size: " + pizzaSize);
+
         String address = request.getParameter("address");
         request.setAttribute("address", address);
         System.out.println("Address: " + address);
@@ -22,19 +27,24 @@ public class PizzaOrderForm extends HttpServlet {
         String pineapple = request.getParameter("pin");
         String ham = request.getParameter("ham");
         String veggies = request.getParameter("veg");
-        System.out.println("Toppings: ");
-        if (pepperoni != null) {
-            System.out.println(pepperoni);
+//        System.out.println("Toppings: ");
+//        if (pepperoni != null) {
+//            System.out.println(pepperoni);
+//        }
+//        if (pineapple != null) {
+//            System.out.println(pineapple);
+//        }
+//        if (ham != null) {
+//            System.out.println(ham);
+//        }
+//        if (veggies != null) {
+//            System.out.println(veggies);
+//        }
+        String[] topping = request.getParameterValues("toppings");
+        for (int i = 0; i <= topping.length -1; i++) {
+            System.out.println("Toppings: " + topping[i]);
         }
-        if (pineapple != null) {
-            System.out.println(pineapple);
-        }
-        if (ham != null) {
-            System.out.println(ham);
-        }
-        if (veggies != null) {
-            System.out.println(veggies);
-        }
+
 
         request.getRequestDispatcher("pizza-order.jsp").forward(request, response);
     }
