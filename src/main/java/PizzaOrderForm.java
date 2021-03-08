@@ -40,11 +40,12 @@ public class PizzaOrderForm extends HttpServlet {
 //        if (veggies != null) {
 //            System.out.println(veggies);
 //        }
+        System.out.print("Toppings: ");
         String[] topping = request.getParameterValues("toppings");
         for (int i = 0; i <= topping.length -1; i++) {
-            System.out.println("Toppings: " + topping[i]);
+            System.out.print(topping[i] + " ");
         }
-
+        System.out.println();
 
         request.getRequestDispatcher("pizza-order.jsp").forward(request, response);
     }
