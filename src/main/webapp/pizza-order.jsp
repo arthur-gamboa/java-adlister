@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -7,7 +8,7 @@
 <body>
 <h1>Customize Your Pizza!</h1><hr>
 
-<form method="POST">
+<form method="POST" action="pizza-order">
     <h3>Select Your Crust</h3>
     <label>
         <select name="crust">
@@ -26,18 +27,22 @@
     </label><br><br>
     <label>
         <h3>Select Your Toppings</h3>
-            <input type="checkbox" name="toppings" value="a">Pepperoni<br>
-            <input type="checkbox" name="toppings" value="b">Pineapple<br>
-            <input type="checkbox" name="toppings" value="c">Ham<br>
-            <input type="checkbox" name="toppings" value="d">Veggies
+            <input type="checkbox" name="toppings" id="pep" value="pep">Pepperoni<br>
+            <input type="checkbox" name="toppings" id="pin" value="pin">Pineapple<br>
+            <input type="checkbox" name="toppings" id="ham" value="ham">Ham<br>
+            <input type="checkbox" name="toppings" id="veg" value="veg">Veggies
     </label><br><br>
-    <label>
+    <label for="address">
         <h3>Delivery Address</h3>
-            <input type="text" name="address" placeholder="Enter delivery address">
-    </label><br><br><br>
+    </label>
+            <input id="address" type="text" name="address" placeholder="Enter delivery address">
+    <br><br><br>
 
     <button type="submit">Submit Order</button>
-
+    <div>
+        Address Entered: ${address}
+    </div>
 </form>
+
 </body>
 </html>
