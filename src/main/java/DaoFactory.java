@@ -9,7 +9,7 @@ public class DaoFactory {
         return adsDao;
     }
 
-    public static Users getUserDao() {
+    public static Users getUsersDao() {
         if (usersDao == null) {
             usersDao = new ListUsersDao();
         }
