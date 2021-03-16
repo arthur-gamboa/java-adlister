@@ -28,7 +28,7 @@ public class MySQLUsersDao implements Users {
     public Long insert(User user) {
         try {
             PreparedStatement stmt = connection.prepareStatement("INSERT INTO users(username, email, password) VALUES(?,?,?)", Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, user.getUsername());
+            stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
             stmt.executeUpdate();
@@ -47,7 +47,7 @@ public class MySQLUsersDao implements Users {
         String query = "SELECT * FROM users WHERE username = ? limit 1";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, username);
+            stmt.setString(1, username);
 //            stmt.executeQuery();
             ResultSet rs = stmt.executeQuery();
             rs.next();
@@ -61,7 +61,7 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new user.", e);
         }
-        return null;
+
     }
 
 }
